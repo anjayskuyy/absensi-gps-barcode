@@ -4,7 +4,8 @@ RUN apt-get update && apt-get install -y \
     libgd-dev libzip-dev libpng-dev libjpeg-dev \
     libonig-dev libxml2-dev curl unzip git \
     && docker-php-ext-install pdo_mysql mbstring xml ctype bcmath zip gd \
-    && a2enmod rewrite
+    && a2dismod mpm_event mpm_worker \
+    && a2enmod mpm_prefork rewrite
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
