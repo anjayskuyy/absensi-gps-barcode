@@ -14,7 +14,7 @@ COPY . .
 RUN composer config --global allow-plugins.pestphp/pest-plugin true
 RUN composer config --global secure-http false
 ENV COMPOSER_NO_AUDIT=1
-RUN COMPOSER_ALLOW_SUPERUSER=1 composer install --no-dev --optimize-autoloader --no-scripts --no-interaction --ignore-platform-reqs
+RUN COMPOSER_NO_SUPERUSER=1 composer install --no-dev --optimize-autoloader --no-scripts --no-interaction --ignore-platform-reqs
 
 RUN cp .env.example .env && php artisan key:generate
 
