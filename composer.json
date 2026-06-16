@@ -1,4 +1,12 @@
 {
+    "config": {
+    "allow-plugins": {
+        "pestphp/pest-plugin": true
+    }
+ },
+ "policy-advisories": {
+     "block": false
+ },
     "name": "laravel/laravel",
     "type": "project",
     "description": "The skeleton application for the Laravel framework.",
