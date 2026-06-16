@@ -10,6 +10,10 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www/html
 COPY . .
+RUN composer config --global allow-plugins.pestphp/pest-plugin true
+RUN composer config --global secure-http false
+ENV COMPOSER_NO_AUDIT=1
+RUN COMPOSER_ALLOW_SUPERUSER=1 composer install --no-dev --optimize-autoloader --no-scripts --no-interaction --ignore-platform-reqs
 
 RUN composer install --no-dev --optimize-autoloader --no-scripts --no-interaction --ignore-platform-reqs
 
