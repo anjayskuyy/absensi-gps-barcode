@@ -72,6 +72,16 @@
         "allow-plugins": {
             "pestphp/pest-plugin": true,
             "php-http/discovery": true
+        },
+        "audit": {
+            "abandoned": "ignore",
+            "ignore": {
+                "PKSA-mdq4-51ck-6kdq": "ignored",
+                "PKSA-8qx3-n5y5-vvnd": "ignored",
+                "PKSA-q46n-4fdk-zjr4": "ignored",
+                "PKSA-qzrn-rnz3-85wl": "ignored",
+                "PKSA-w7xr-vk7n-rstm": "ignored"
+            }
         }
     },
     "minimum-stability": "stable",
