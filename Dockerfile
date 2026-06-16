@@ -2,8 +2,9 @@ FROM php:8.2-cli
 
 RUN apt-get update && apt-get install -y \
     libgd-dev libzip-dev libpng-dev libjpeg-dev \
-    libonig-dev libxml2-dev curl unzip git \
-    && docker-php-ext-install pdo_mysql mbstring xml ctype bcmath zip gd curl \
+    libonig-dev libxml2-dev libcurl4-openssl-dev \
+    curl unzip git \
+    && docker-php-ext-install pdo_mysql mbstring xml ctype bcmath zip gd \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
