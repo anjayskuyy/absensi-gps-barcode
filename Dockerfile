@@ -11,7 +11,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 WORKDIR /var/www/html
 COPY . .
 
-RUN composer install --no-dev --optimize-autoloader --no-scripts --no-interaction --ignore-platform-reqs --no-audit
+RUN composer install --no-dev --optimize-autoloader --no-scripts --no-interaction --ignore-platform-reqs
 
 RUN cp .env.example .env && php artisan key:generate
 
