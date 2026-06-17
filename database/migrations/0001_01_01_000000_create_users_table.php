@@ -33,7 +33,8 @@ return new class extends Migration
             $table->string('password');
             $table->string('raw_password')->nullable();
 
-            $table->enum('group', ['user', 'admin', 'superadmin']);
+            
+            $table->enum('group', ['user', 'admin', 'superadmin'])->default('user');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
             $table->rememberToken();
